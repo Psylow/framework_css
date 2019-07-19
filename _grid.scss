@@ -1,0 +1,80 @@
+$i: 1;
+$number-col: 12!default;
+$min-width: 1200px!default;
+$guetter: 30px!default;
+
+.container{
+	width: $min-width;
+	margin: 0 auto;
+}
+
+.no-guetter{
+	margin:0 $guetter * 0;
+}
+
+.container-fluid{
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.row.no-guetter{
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -30px;
+	margin-left: -30px;
+}
+
+%col{
+	float: left;
+	position: relative;
+	width: 25%;
+	text-align: left;
+	padding-left: 15px;
+	min-height: 1px;
+	background-color: lightgrey;
+}
+
+@for $i from 1 through $number-col{
+	$width: percentage($i / $number-col);
+	.col-#{$i} {
+	 width: $width;
+	}
+	.col-#{$i}, .col-sm-#{$i}, .col-ms-#{$i}, .col-lg-#{$i}, .col-xl-#{$i}{ @extend %col; }
+}
+
+@media only screen and (min-width: 540px) {
+	@for $i from 1 through $number-col{
+		$width: percentage($i / $number-col);
+		.col-sm-#{$i} {
+	 	width: $width;
+		}
+	}
+}
+
+@media only screen and (min-width: 720px) {
+	@for $i from 1 through $number-col{
+		$width: percentage($i / $number-col);
+		.col-md-#{$i} {
+	 	width: $width;
+		}
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	@for $i from 1 through $number-col{
+		$width: percentage($i / $number-col);
+		.col-lg-#{$i} {
+	 	width: $width;
+		}
+	}
+}
+
+@media only screen and (min-width: 1140px) {
+	@for $i from 1 through $number-col{
+		$width: percentage($i / $number-col);
+		.col-xl-#{$i} {
+	 	width: $width;
+		}
+	}
+}

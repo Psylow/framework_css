@@ -1,0 +1,403 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+}
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin changeButton($color, $bd, $border) {
+  color: $color;
+  background-color: $bd;
+  border-color: $border;
+}
+
+.btn-default {
+  @include changeButton($btn-default-color, $btn-default-bd, $btn-default-border);
+}
+
+.btn-primary {
+  @include changeButton($btn-primary-color, $btn-primary-bd, $btn-primary-border);
+}
+
+.btn-success {
+  @include changeButton($btn-success-color, $btn-success-bd, $btn-success-border);
+}
+
+.btn-info {
+  @include changeButton($btn-info-color, $btn-info-bd, $btn-info-border);
+}
+
+.btn-warning {
+  @include changeButton($btn-warning-color, $btn-warning-bd, $btn-warning-border);
+}
+
+.btn-danger {
+  @include changeButton($btn-danger-color, $btn-danger-bd, $btn-danger-border);
+}
+
+.btn-link {
+  @include changeButton($btn-link-color, $btn-link-bd, $btn-link-border);
+}
+
+@mixin hoverButton($color, $bg, $border) {
+  color: $color;
+  background-color: $bg;
+  border-color: $border;
+}
+
+.btn-default:hover {
+  @include hoverButton($hover-default-color, $hover-default-bg, $hover-default-border);
+}
+
+.btn-primary:hover {
+  @include hoverButton($hover-primary-color, $hover-primary-bg, $hover-primary-border);
+}
+
+.btn-success:hover {
+  @include hoverButton($hover-success-color, $hover-success-bg, $hover-success-border);
+}
+
+.btn-info:hover {
+  @include hoverButton($hover-info-color, $hover-info-bg, $hover-info-border);
+}
+
+.btn-warning:hover {
+  @include hoverButton($hover-warning-color, $hover-warning-bg, $hover-warning-border);
+}
+
+.btn-danger:hover {
+  @include hoverButton($hover-danger-color, $hover-danger-bg, $hover-danger-border);
+}
+
+@mixin linkHover($color, $text, $bg) {
+  color: $color;
+  text-decoration: $text;
+  background-color: $bg;
+}
+
+.btn-link:hover {
+  @include linkHover($hover-link-color, $hover-link-text, $hover-link-bg);
+}
+
+@mixin sizeButton($padding, $size, $line, $border) {
+  padding: $padding;
+  font-size: $size;
+  line-height: $line;
+  border-radius: $border;
+}
+.btn-lg {
+  @include sizeButton($padding-lg, $size-lg, $line-lg, $border-lg);
+}
+
+.btn-sm {
+  @include sizeButton($padding-sm, $size-sm, $line-sm, $border-sm);
+}
+
+.btn-xs {
+  @include sizeButton($padding-xs, $size-xs, $line-xs, $border-xs);
+}
+
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn[disabled] {
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  opacity: 0.65;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+a.btn.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  opacity: 0.65;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-primary.active {
+  color: $btn-primary-color;
+  background-color: $btn-primary-bd;
+  background-image: none;
+  border-color: $btn-primary-border;
+}
+
+a {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+@mixin colorText($color) {
+  color: $color;
+}
+
+.text-muted {
+  @include colorText($text-muted);
+}
+
+.text-primary {
+  @include colorText($text-primary);
+}
+
+.text-success {
+  @include colorText($text-success);
+}
+
+.text-info {
+  @include colorText($text-info);
+}
+
+.text-warning {
+  @include colorText($text-warning);
+}
+
+.text-danger {
+  @include colorText($text-danger);
+}
+
+@mixin backgroundText($color, $bg) {
+  color: $color;
+  background-color: $bg;
+}
+
+.bg-primary {
+  @include backgroundText($bg-primary-color, $bg-primary-bg);
+}
+
+@mixin textBackgroung($bg) {
+  background-color: $bg;
+}
+
+.bg-success {
+  @include textBackgroung($bg-success-bg);
+}
+
+.bg-info {
+  @include textBackgroung($bg-info-bg);
+}
+
+.bg-warning {
+  @include textBackgroung($bg-warning-bg);
+}
+
+.bg-danger {
+  @include textBackgroung($bg-danger-bg);
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+@mixin alert($color, $bg, $border) {
+  color: $color;
+  background-color: $bg;
+  border-color: $border;
+}
+
+.alert-success {
+  @include alert($alert-success-color, $alert-success-bg, $alert-success-border);
+  .alert-link {
+    color: #2b542c;
+    font-weight: 700;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.alert-info {
+  @include alert($alert-info-color, $alert-info-bg, $alert-info-border);
+  .alert-link {
+    color: #245269;
+    font-weight: 700;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.alert-warning {
+  @include alert($alert-warning-color, $alert-warning-bg, $alert-warning-border);
+  .alert-link {
+    color: #66512c;
+    font-weight: 700;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.alert-danger {
+  @include alert($alert-danger-color, $alert-danger-bg, $alert-danger-border);
+  .alert-link {
+    color: #843534;
+    font-weight: 700;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  color: #000;
+}
+
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.alert-dismissable .close,
+.alert-dismissible .close {
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+
+.col-xs-3 {
+  width: 25%;
+  float: left;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.img-blur {
+  filter: blur(5px);
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-rounded {
+  border-radius: 6px;
+}
+.img-circle {
+  border-radius: 50%;
+}
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.h1,
+h1 {
+  font-size: 36px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+  .visible-lg {
+    display: block !important;
+  }
+}
+
+.visible-lg,
+.visible-md,
+.visible-sm,
+.visible-xs {
+  display: none !important;
+}
+
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+html, body{
+  height: 100%;
+  margin: 0;
+}
