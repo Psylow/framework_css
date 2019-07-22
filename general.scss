@@ -378,13 +378,6 @@ h1 {
   box-sizing: border-box;
 }
 
-@media (min-width: 1200px) {
-  .visible-lg {
-    display: block !important;
-  }
-}
-
-.visible-lg,
 .visible-md,
 .visible-sm,
 .visible-xs {
@@ -395,6 +388,18 @@ h1 {
   .hidden-lg {
     display: none !important;
   }
+}
+
+@media (max-width: 991px) and (min-width: 768px){
+.hidden-sm, .visible-lg, .hidden-md {
+    display: none!important;
+}
+}
+
+@media (max-width: 991px) and (min-width: 768px){
+.visible-sm, .visible-md {
+    display: block!important;
+}
 }
 
 html, body{
